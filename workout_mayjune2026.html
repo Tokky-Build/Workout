@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Workout">
+<meta name="theme-color" content="#06080E">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2936/2936886.png">
+<title>MAY–JUN 2026 · Workout</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+html{-webkit-text-size-adjust:100%;}
+body{background-color:#06080E;color:#E8EAF2;font-family:'Outfit',-apple-system,sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+.app{max-width:480px;margin:0 auto;padding:22px 14px 72px;}
+.hdr{margin-bottom:22px;}
+.hdr-eye{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:#3D4560;margin-bottom:8px;}
+.hdr-title{font-family:'Bebas Neue',sans-serif;font-size:64px;letter-spacing:4px;line-height:.88;color:#E8EAF2;}
+.hdr-accent{color:#C8F542;}
+.hdr-rule{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:10px;margin:12px 0 10px;}
+.hdr-rule-line{-webkit-flex:1;flex:1;height:1px;background-color:#1A1F30;}
+.hdr-rule-dot{width:5px;height:5px;border-radius:50%;background-color:#C8F542;}
+.hdr-tag{font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#C8F542;}
+.hdr-sub{font-size:11px;color:#5A6180;margin-top:5px;font-weight:300;line-height:1.6;}
+.goal-strip{display:-webkit-flex;display:flex;gap:6px;margin-bottom:16px;}
+.goal-pill{-webkit-flex:1;flex:1;background-color:#0D1020;border:0.5px solid #1E2438;border-radius:10px;padding:9px 6px;text-align:center;}
+.goal-icon{font-size:18px;line-height:1;}
+.goal-label{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:.5px;text-transform:uppercase;color:#3D4560;margin-top:3px;}
+.goal-value{font-size:10px;font-weight:600;color:#E8EAF2;margin-top:2px;}
+.prog-badges{display:-webkit-flex;display:flex;gap:8px;margin-bottom:14px;}
+.prog-badge{-webkit-flex:1;flex:1;border-radius:12px;padding:10px 12px;border:0.5px solid;}
+.prog-badge-flex{background-color:rgba(143,127,245,.08);border-color:rgba(143,127,245,.25);}
+.prog-badge-ido{background-color:rgba(200,245,66,.08);border-color:rgba(200,245,66,.2);}
+.pb-icon{font-size:20px;margin-bottom:4px;}
+.pb-name{font-family:'DM Mono',monospace;font-size:8px;letter-spacing:.5px;text-transform:uppercase;}
+.pb-name-flex{color:#8F7FF5;}.pb-name-ido{color:#C8F542;}
+.pb-desc{font-size:9.5px;color:#5A6180;margin-top:3px;line-height:1.5;}
+.pb-focus{font-family:'DM Mono',monospace;font-size:8px;margin-top:5px;}
+.pb-focus-flex{color:#8F7FF5;}.pb-focus-ido{color:#C8F542;}
+.shift-box{background-color:#0D1020;border:0.5px solid #1E2438;border-radius:14px;padding:14px;margin-bottom:14px;}
+.box-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#3D4560;margin-bottom:12px;}
+.shift-row{display:-webkit-flex;display:flex;-webkit-align-items:flex-start;align-items:flex-start;gap:10px;margin-bottom:9px;}
+.shift-row:last-child{margin-bottom:0;}
+.s-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.s-body{-webkit-flex:1;flex:1;}
+.s-main{font-size:11px;color:#8A94B8;line-height:1.5;}
+.s-dates{font-family:'DM Mono',monospace;font-size:10px;color:#E8EAF2;margin-top:3px;}
+.s-gym{font-size:9px;color:#3D4560;margin-top:2px;}
+.stats{display:-webkit-flex;display:flex;gap:6px;margin-bottom:14px;}
+.stat{-webkit-flex:1;flex:1;background-color:#0D1020;border:0.5px solid #1E2438;border-radius:12px;padding:11px 4px 9px;text-align:center;position:relative;overflow:hidden;}
+.stat-top{position:absolute;top:0;left:0;right:0;height:2px;}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1;}
+.stat-l{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.3px;text-transform:uppercase;color:#3D4560;margin-top:3px;}
+.legend{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.leg{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:4px;font-size:10px;color:#5A6180;}
+.leg-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.tabs{display:-webkit-flex;display:flex;gap:6px;margin-bottom:12px;}
+.tab{-webkit-flex:1;flex:1;padding:10px;background-color:#0D1020;border:0.5px solid #1E2438;border-radius:10px;text-align:center;cursor:pointer;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.5px;color:#3D4560;}
+.tab.active{background-color:#131728;border-color:#8F7FF5;color:#E8EAF2;}
+.month-panel{display:none;}.month-panel.active{display:block;}
+.cal-wrap{background-color:#0D1020;border:0.5px solid #1E2438;border-radius:14px;overflow:hidden;margin-bottom:14px;}
+.cal-hdr{padding:10px 14px;background-color:#111525;border-bottom:0.5px solid #1E2438;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;align-items:center;}
+.cal-hdr-t{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;color:#E8EAF2;}
+.cal-hdr-n{font-family:'DM Mono',monospace;font-size:9px;color:#3D4560;}
+.dow-row{display:-webkit-flex;display:flex;background-color:#111525;border-bottom:0.5px solid #1E2438;}
+.dow{-webkit-flex:1;flex:1;text-align:center;font-family:'DM Mono',monospace;font-size:8.5px;color:#3D4560;padding:6px 0;text-transform:uppercase;letter-spacing:.5px;}
+.cal-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;}
+.day{width:calc(100% / 7);min-height:68px;padding:5px 3px 4px 5px;border-right:0.5px solid #1A1F30;border-bottom:0.5px solid #1A1F30;position:relative;}
+.day:nth-child(7n){border-right:none;}
+.day.empty{background-color:transparent;border-color:transparent;}
+.day.morning{background-color:#090D1C;}.day.night{background-color:#0A0814;}.day.holiday{background-color:#100E04;border-top:2px solid #FFD166;}
+.day.gym-day{cursor:pointer;}
+.day.gym-flex-A{background-color:#100D20;border-top:2px solid #8F7FF5;}
+.day.gym-flex-B{background-color:#10100D;border-top:2px solid #FF9F45;}
+.day.gym-flex-C{background-color:#10080F;border-top:2px solid #FF5F9E;}
+.day.gym-ido-A{background-color:#0C1205;border-top:2px solid #C8F542;}
+.day.gym-ido-B{background-color:#10100D;border-top:2px solid #FF9F45;}
+.day.gym-ido-C{background-color:#10080F;border-top:2px solid #FF5F9E;}
+.day.selected{outline:1.5px solid rgba(255,255,255,.45);outline-offset:-1.5px;z-index:2;position:relative;}
+.d-hdr{display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;}
+.d-num{font-family:'DM Mono',monospace;font-size:14px;font-weight:500;line-height:1;color:#3D4560;}
+.day.gym-day .d-num{color:#E8EAF2;}.day.holiday .d-num{color:#FFD166;}
+.d-dow{font-size:6px;color:#3D4560;margin-top:1px;}
+.d-pip{width:4px;height:4px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.gym-tag{font-family:'DM Mono',monospace;font-size:6px;letter-spacing:.3px;padding:2px 4px;border-radius:4px;margin-top:4px;display:inline-block;text-transform:uppercase;}
+.tag-A-flex{background-color:rgba(143,127,245,.15);color:#8F7FF5;}
+.tag-A-ido{background-color:rgba(200,245,66,.15);color:#C8F542;}
+.tag-B{background-color:rgba(255,159,69,.15);color:#FF9F45;}
+.tag-C{background-color:rgba(255,95,158,.15);color:#FF5F9E;}
+.d-time{font-family:'DM Mono',monospace;font-size:6px;color:#3D4560;margin-top:2px;}
+.d-gym-name{font-size:5.5px;color:#2A2F45;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.d-note{font-size:6px;margin-top:3px;line-height:1.3;}
+.detail{background-color:#0D1020;border:0.5px solid #1E2438;border-radius:14px;overflow:hidden;display:none;margin-bottom:14px;}
+.detail.visible{display:block;}
+.det-head{padding:16px 16px 14px;border-bottom:0.5px solid #1E2438;position:relative;overflow:hidden;}
+.det-bg-dots{position:absolute;top:0;left:0;right:0;bottom:0;opacity:.03;background-image:radial-gradient(circle,#8F7FF5 1px,transparent 1px);background-size:20px 20px;}
+.det-gym-pill{position:relative;display:inline-block;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.8px;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:8px;}
+.pill-flex{color:#8F7FF5;background-color:rgba(143,127,245,.12);border:0.5px solid rgba(143,127,245,.3);}
+.pill-ido{color:#C8F542;background-color:rgba(200,245,66,.1);border:0.5px solid rgba(200,245,66,.25);}
+.det-date{font-family:'DM Mono',monospace;font-size:9px;color:#5A6180;letter-spacing:.5px;margin-bottom:3px;position:relative;}
+.det-title{font-family:'Bebas Neue',sans-serif;font-size:46px;letter-spacing:2px;line-height:1;position:relative;}
+.det-sub{font-size:12px;font-weight:600;margin-top:3px;position:relative;color:#5A6180;}
+.det-meta{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:6px;margin-top:10px;position:relative;}
+.meta-chip{font-family:'DM Mono',monospace;font-size:9px;color:#5A6180;background-color:#111525;padding:4px 10px;border-radius:7px;border:0.5px solid #1E2438;}
+.det-why{position:relative;margin-top:10px;padding:9px 12px;background-color:rgba(255,255,255,.025);border-radius:8px;border-left:2px solid #1E2438;}
+.det-why p{font-size:10px;color:#5A6180;line-height:1.65;}
+.sec-title{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:#3D4560;padding:12px 14px 8px;}
+.ex-list{padding:0 10px 10px;}
+.sec-div{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;gap:8px;margin:4px 0 6px;}
+.sec-div::before,.sec-div::after{content:'';-webkit-flex:1;flex:1;height:0.5px;background-color:#1A1F30;}
+.sec-div span{font-family:'DM Mono',monospace;font-size:7.5px;color:#3D4560;text-transform:uppercase;letter-spacing:.5px;white-space:nowrap;}
+.ex-card{background-color:#111525;border:0.5px solid #1E2438;border-radius:12px;overflow:hidden;margin-bottom:5px;}
+.ex-card.open{border-color:#2A3050;}
+.ex-hdr{display:-webkit-flex;display:flex;gap:10px;padding:11px 12px;-webkit-align-items:center;align-items:center;cursor:pointer;}
+.ex-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:#2A3050;width:24px;text-align:center;flex-shrink:0;}
+.ex-info{-webkit-flex:1;flex:1;min-width:0;}
+.ex-name{font-size:13px;font-weight:600;color:#E8EAF2;}
+.ex-desc{font-size:9.5px;color:#5A6180;margin-top:2px;line-height:1.4;font-weight:300;}
+.ex-why-inline{font-family:'DM Mono',monospace;font-size:7.5px;color:#3D4560;margin-top:3px;letter-spacing:.2px;}
+.ex-right{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-align-items:flex-end;align-items:flex-end;gap:4px;flex-shrink:0;}
+.ex-sets{font-family:'Bebas Neue',sans-serif;font-size:17px;white-space:nowrap;}
+.ex-type{font-family:'DM Mono',monospace;font-size:7px;padding:2px 6px;border-radius:5px;white-space:nowrap;letter-spacing:.2px;}
+.t-cali{background-color:rgba(200,245,66,.1);color:#C8F542;}
+.t-weight{background-color:rgba(255,200,80,.1);color:#FFD166;}
+.t-cardio{background-color:rgba(80,220,160,.1);color:#50DCA0;}
+.t-warm{background-color:rgba(90,97,128,.1);color:#3D4560;}
+.t-stretch{background-color:rgba(180,120,255,.1);color:#C47AFF;}
+.t-hiit{background-color:rgba(255,80,80,.1);color:#FF7070;}
+.ex-chev{font-size:10px;color:#3D4560;margin-top:2px;display:inline-block;-webkit-transition:-webkit-transform .25s;transition:transform .25s;}
+.ex-card.open .ex-chev{-webkit-transform:rotate(180deg);transform:rotate(180deg);}
+/* EXPANDABLE */
+.ex-detail-wrap{overflow:hidden;max-height:0;-webkit-transition:max-height .4s ease;transition:max-height .4s ease;}
+/* YOUTUBE THUMBNAIL */
+.yt-section{border-top:0.5px solid #1A1F30;background-color:#06090F;}
+.yt-thumb-wrap{position:relative;cursor:pointer;display:block;text-decoration:none;}
+.yt-thumb{width:100%;display:block;max-height:200px;object-fit:cover;}
+.yt-play-btn{position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);width:56px;height:56px;background-color:rgba(255,0,0,.88);border-radius:14px;display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;}
+.yt-play-icon{width:0;height:0;border-top:11px solid transparent;border-bottom:11px solid transparent;border-left:20px solid #fff;margin-left:4px;}
+.yt-open-btn{display:block;width:100%;padding:10px 12px;background-color:#0D1020;border:none;color:#FF5555;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;text-align:center;text-decoration:none;cursor:pointer;border-top:0.5px solid #1A1F30;-webkit-appearance:none;appearance:none;}
+.yt-note{font-size:8px;color:#2A3050;text-align:center;padding:4px 12px 8px;font-family:'DM Mono',monospace;}
+/* TEXT DETAIL */
+.ex-text-detail{background-color:#09101C;padding:12px 12px 14px;}
+.muscle-row{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+.muscle-pill{font-family:'DM Mono',monospace;font-size:8px;padding:3px 8px;border-radius:99px;}
+.muscle-main{background-color:rgba(200,245,66,.1);color:#C8F542;border:0.5px solid rgba(200,245,66,.2);}
+.muscle-sec{background-color:rgba(90,97,128,.08);color:#5A6180;border:0.5px solid #1E2438;}
+.cue-section-title{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:1px;text-transform:uppercase;color:#3D4560;margin-bottom:7px;}
+.cue-steps{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;gap:5px;margin-bottom:10px;}
+.cue-step{display:-webkit-flex;display:flex;gap:9px;-webkit-align-items:flex-start;align-items:flex-start;}
+.cue-n{font-family:'Bebas Neue',sans-serif;font-size:18px;color:#2A3050;line-height:1.1;flex-shrink:0;width:18px;text-align:center;}
+.cue-t{font-size:11.5px;color:#8A94B8;line-height:1.55;}
+.cue-t strong{color:#E8EAF2;font-weight:600;}
+.mistake-box{background-color:rgba(255,80,80,.04);border:0.5px solid rgba(255,80,80,.12);border-radius:8px;padding:8px 10px;}
+.mistake-title{font-family:'DM Mono',monospace;font-size:7.5px;letter-spacing:.8px;text-transform:uppercase;color:#FF7070;margin-bottom:6px;}
+.mistake-item{font-size:10px;color:#5A6180;line-height:1.6;display:-webkit-flex;display:flex;gap:6px;margin-bottom:2px;}
+.mistake-x{color:#FF7070;flex-shrink:0;}
+.tip-box{margin:0 10px 12px;background-color:rgba(143,127,245,.05);border-radius:10px;padding:10px 12px;border-left:2px solid #8F7FF5;}
+.tip-box p{font-size:10.5px;color:#5A6180;line-height:1.8;}
+.placeholder{padding:28px 16px;text-align:center;}
+.placeholder-icon{font-size:36px;margin-bottom:10px;}
+.placeholder-text{font-size:12px;color:#5A6180;line-height:1.8;}
+.sess-section{margin-bottom:14px;}
+.sess-label{font-family:'DM Mono',monospace;font-size:8.5px;letter-spacing:1px;text-transform:uppercase;color:#3D4560;margin-bottom:8px;}
+.sess-block{background-color:#0D1020;border:0.5px solid #1E2438;border-radius:14px;overflow:hidden;margin-bottom:8px;}
+.sess-block-hdr{padding:8px 12px;background-color:#111525;border-bottom:0.5px solid #1E2438;display:-webkit-flex;display:flex;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;align-items:center;}
+.sess-block-name{font-size:11px;font-weight:600;color:#E8EAF2;}
+.sess-block-gym{font-family:'DM Mono',monospace;font-size:8px;font-weight:600;}
+.sess-block-count{font-family:'DM Mono',monospace;font-size:8.5px;color:#3D4560;}
+.sess-grid{display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;gap:5px;padding:10px;}
+.sess-chip{display:-webkit-flex;display:flex;-webkit-flex-direction:column;flex-direction:column;-webkit-align-items:center;align-items:center;padding:7px 5px 6px;border-radius:10px;border:0.5px solid;cursor:pointer;width:calc(33.33% - 4px);}
+.sess-chip:active{opacity:.65;}
+.chip-flex-A{background-color:rgba(143,127,245,.07);border-color:rgba(143,127,245,.2);}
+.chip-flex-B{background-color:rgba(255,159,69,.07);border-color:rgba(255,159,69,.2);}
+.chip-flex-C{background-color:rgba(255,95,158,.07);border-color:rgba(255,95,158,.2);}
+.chip-ido-A{background-color:rgba(200,245,66,.06);border-color:rgba(200,245,66,.18);}
+.chip-ido-B{background-color:rgba(255,159,69,.07);border-color:rgba(255,159,69,.2);}
+.chip-ido-C{background-color:rgba(255,95,158,.07);border-color:rgba(255,95,158,.2);}
+.chip-date{font-family:'DM Mono',monospace;font-size:12px;font-weight:500;color:#E8EAF2;line-height:1;}
+.chip-dow{font-size:8.5px;color:#5A6180;margin-top:2px;}
+.chip-badge{font-family:'DM Mono',monospace;font-size:7.5px;padding:2px 7px;border-radius:4px;margin-top:4px;text-transform:uppercase;letter-spacing:.3px;}
+.badge-A-flex{background-color:rgba(143,127,245,.15);color:#8F7FF5;}
+.badge-A-ido{background-color:rgba(200,245,66,.15);color:#C8F542;}
+.badge-B{background-color:rgba(255,159,69,.15);color:#FF9F45;}
+.badge-C{background-color:rgba(255,95,158,.15);color:#FF5F9E;}
+.chip-time{font-family:'DM Mono',monospace;font-size:7.5px;color:#3D4560;margin-top:3px;}
+.chip-gym{font-family:'DM Mono',monospace;font-size:7px;font-weight:600;margin-top:2px;}
+.chip-gym-flex{color:#8F7FF5;}.chip-gym-ido{color:#C8F542;}
+.footer{text-align:center;margin-top:24px;padding:0 16px;}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:#3D4560;}
+.footer-txt{font-family:'DM Mono',monospace;font-size:8.5px;color:#2A3050;margin-top:6px;line-height:2;letter-spacing:.3px;}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="hdr">
+    <div class="hdr-eye">Workout Program · 2026</div>
+    <div class="hdr-title">MAY <span class="hdr-accent">–</span> JUN</div>
+    <div class="hdr-rule"><div class="hdr-rule-line"></div><div class="hdr-rule-dot"></div><div class="hdr-rule-line"></div></div>
+    <div class="hdr-tag">Built for the grind.</div>
+    <div class="hdr-sub">2 ยิม · 2 โปรแกรม · อายุ 43 · กะสลับ · เป้าหมาย: ลีน เฟิร์ม กล้าม</div>
+  </div>
+  <div class="goal-strip">
+    <div class="goal-pill"><div class="goal-icon">🔥</div><div class="goal-label">Goal</div><div class="goal-value">Lean</div></div>
+    <div class="goal-pill"><div class="goal-icon">💪</div><div class="goal-label">Method</div><div class="goal-value">Hybrid</div></div>
+    <div class="goal-pill"><div class="goal-icon">🌙</div><div class="goal-label">System</div><div class="goal-value">Shift-Safe</div></div>
+    <div class="goal-pill"><div class="goal-icon">⏱</div><div class="goal-label">Time</div><div class="goal-value">55–60 min</div></div>
+  </div>
+  <div class="prog-badges">
+    <div class="prog-badge prog-badge-flex">
+      <div class="pb-icon">🏋️</div><div class="pb-name pb-name-flex">FLEX FITNESS</div>
+      <div class="pb-desc">เวทครบครัน · Compound heavy<br>สร้างกล้ามเนื้อแบบถาวร</div>
+      <div class="pb-focus pb-focus-flex">→ Barbell · Dumbbell · Cable</div>
+    </div>
+    <div class="prog-badge prog-badge-ido">
+      <div class="pb-icon">🤸</div><div class="pb-name pb-name-ido">I DO CALISTHENICS</div>
+      <div class="pb-desc">บอดี้เวท · ข้อต่อแข็งแรง<br>เฟิร์มทั้งตัว</div>
+      <div class="pb-focus pb-focus-ido">→ Bar · Rings · Parallel Bar</div>
+    </div>
+  </div>
+  <div class="shift-box">
+    <div class="box-title">ตารางกะ + ยิม</div>
+    <div class="shift-row"><div class="s-dot" style="background-color:#4DA8FF;"></div><div class="s-body"><div class="s-main">กะเช้า 06:00–18:00 → ยิมหลังเลิก <strong style="color:#E8EAF2;">18:45 น.</strong></div><div class="s-dates">29 เม.ย.–13 พ.ค. · 30 พ.ค.–15 มิ.ย.</div><div class="s-gym">📍 I Do Calisthenics, Yerevan</div></div></div>
+    <div class="shift-row"><div class="s-dot" style="background-color:#FFD166;"></div><div class="s-body"><div class="s-main">วันหยุด</div><div class="s-dates">14 พ.ค. · 16 มิ.ย.</div></div></div>
+    <div class="shift-row"><div class="s-dot" style="background-color:#8F7FF5;"></div><div class="s-body"><div class="s-main">กะดึก 18:00–06:00 → ยิมก่อนเข้างาน <strong style="color:#E8EAF2;">14:30 น.</strong></div><div class="s-dates">15–29 พ.ค. · 17–30 มิ.ย.</div><div class="s-gym">📍 FLEX Fitness, Yerevan</div></div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="stat-top" style="background-color:#C8F542;"></div><div class="stat-n" style="color:#C8F542;">19</div><div class="stat-l">Sessions</div></div>
+    <div class="stat"><div class="stat-top" style="background-color:#8F7FF5;"></div><div class="stat-n" style="color:#8F7FF5;">3</div><div class="stat-l">/ Week</div></div>
+    <div class="stat"><div class="stat-top" style="background-color:#FF9F45;"></div><div class="stat-n" style="color:#FF9F45;">55</div><div class="stat-l">Min</div></div>
+    <div class="stat"><div class="stat-top" style="background-color:#FF5F9E;"></div><div class="stat-n" style="color:#FF5F9E;">2</div><div class="stat-l">Gyms</div></div>
+  </div>
+  <div class="legend">
+    <span class="leg"><span class="leg-dot" style="background-color:#4DA8FF;"></span>กะเช้า</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#FFD166;"></span>หยุด</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#8F7FF5;"></span>กะดึก</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#8F7FF5;"></span>A·FLEX</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#C8F542;"></span>A·I Do</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#FF9F45;"></span>B Pull</span>
+    <span class="leg"><span class="leg-dot" style="background-color:#FF5F9E;"></span>C Legs</span>
+  </div>
+  <div class="tabs">
+    <div class="tab active" id="tab-may" onclick="switchMonth('may')">MAY 2026</div>
+    <div class="tab" id="tab-jun" onclick="switchMonth('jun')">JUN 2026</div>
+  </div>
+  <div class="month-panel active" id="panel-may">
+    <div class="cal-wrap"><div class="cal-hdr"><span class="cal-hdr-t">May 2026</span><span class="cal-hdr-n">FLEX · Night · 14:30</span></div><div class="dow-row" id="dowMay"></div><div class="cal-grid" id="calMay"></div></div>
+  </div>
+  <div class="month-panel" id="panel-jun">
+    <div class="cal-wrap"><div class="cal-hdr"><span class="cal-hdr-t">June 2026</span><span class="cal-hdr-n">I Do → FLEX</span></div><div class="dow-row" id="dowJun"></div><div class="cal-grid" id="calJun"></div></div>
+  </div>
+  <div class="detail" id="detail"><div class="placeholder"><div class="placeholder-icon">👆</div><div class="placeholder-text">แตะวันยิม (มีขอบสี) เพื่อดูโปรแกรม<br>แตะชื่อท่า → ดูคลิป YouTube + คำอธิบายฟอร์ม</div></div></div>
+  <div class="sess-section"><div class="sess-label">All Sessions</div><div id="sessGrid"></div></div>
+  <div class="footer"><div class="footer-brand">FLEX FITNESS · I DO CALISTHENICS</div><div class="footer-txt">FLEX → 14:30 น. · I Do → 18:45 น.<br>ต้องเชื่อมอินเทอร์เน็ตเพื่อดูคลิป YouTube</div></div>
+</div>
+<script>
+var DOW=['Su','Mo','Tu','We','Th','Fr','Sa'],DOWFULL=['อาทิตย์','จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์','เสาร์'];
+var TLBL={cali:'Calisthenics',weight:'เวท',cardio:'Cardio',warm:'Warm-up',stretch:'Stretch',hiit:'HIIT'};
+var TCLS={cali:'t-cali',weight:'t-weight',cardio:'t-cardio',warm:'t-warm',stretch:'t-stretch',hiit:'t-hiit'};
+
+function shiftMay(d){if(d<=13)return'morning';if(d===14)return'holiday';if(d>=15&&d<=29)return'night';return'morning';}
+function shiftJun(d){if(d<=15)return'morning';if(d===16)return'holiday';return'night';}
+function gymOf(month,d){var s=month==='may'?shiftMay(d):shiftJun(d);if(s==='night')return'flex';if(s==='morning')return'ido';return null;}
+function gymMeta(gym){if(gym==='flex')return{time:'14:30 น.',name:'FLEX Fitness',short:'FLEX',pill:'pill-flex',icon:'🏋️'};return{time:'18:45 น.',name:'I Do Calisthenics',short:'I Do',pill:'pill-ido',icon:'🤸'};}
+function endTime(t,dur){var s=t.replace(' น.','').split(':');var h=parseInt(s[0]),m=parseInt(s[1]),tot=h*60+m+dur,eh=Math.floor(tot/60)%24,em=tot%60;return(eh<10?'0':'')+eh+':'+(em<10?'0':'')+em+' น.';}
+
+// ── YOUTUBE VIDEO IDs (verified) ──
+var VIDEOS={
+  'db-bench':   'VmB1G1K7v94', // Scott Herman - DB Bench Press
+  'inc-press':  '8iPEnn-ltC8', // Scott Herman - Incline DB Press
+  'lat-raise':  '3VcKaXpzqRo', // DB Lateral Raise
+  'tri-down':   'vB5OHsJ3EME', // Tricep Pushdown - Bowflex
+  'push-up':    'IODxDxX7oi4', // Push-up tutorial
+  'plank':      'ASdvN_XEl_c', // Plank tutorial
+  'pullup':     'K81-SLUFo9c', // AthleanX Pull-up
+  'db-row':     'roCP_-J7lQ0', // DB Bent-over Row
+  'face-pull':  'eIq5CB9JfKE', // AthleanX Face Pull ✓
+  'db-curl':    'sAq_ocpRh_I', // Scott Herman DB Curl ✓
+  'hammer':     'TwD-YGVP4Bk', // Hammer Curl tutorial
+  'goblet':     'MeIiIdhvXT4', // Scott Herman Goblet Squat ✓
+  'rdl':        'hQgFixeXdZo', // DB Romanian Deadlift
+  'lunge':      'QOVaHwm-Q6U', // DB Walking Lunge
+  'stepup':     'dQqApCGd5Ss', // Step-up tutorial
+  'calf':       'gwLzBv5sAj4', // Calf Raise
+  'dead-bug':   '4XLEnwUr1d8', // Dead Bug
+  'bar-dip':    '2z8JmcrW-As', // Parallel Bar Dip
+  'pike':       'BETZLi4Pd2Q', // Pike Push-up ✓
+  'diamond':    'J0DnG1_S92I', // Scott Herman Diamond Push-up ✓
+  'lsit':       'IUZscpLMDia', // L-sit tutorial
+  'inv-row':    'LCr0LFyFQNc', // Inverted Row
+  'ring-row':   'sEAOZc77wk8', // Ring Row ✓ (user confirmed)
+  'neg-pull':   'gbPURTSxQLY', // Negative Pull-up - Bodybuilding.com ✓
+  'hang-knee':  'KhPTiWP6lB4', // Hanging Knee Raise ✓
+  'dead-hang':  '_7Vv21ZMtjI', // Dead Hang ✓
+  'bulg-split': '2C-uNgKwPLE', // Scott Herman Bulgarian Split Squat ✓
+  'glute-br':   'OUgsJ8-Vi0E', // Glute Bridge ✓
+  'bw-squat':   'U3HlEF_whyU', // Bodyweight Squat
+  'mtn-climb':  'PaR6Z7D5fl4', // Mountain Climber ✓
+  'hollow':     '76FbyqOUywg'  // Hollow Body Hold ✓
+};
+
+// ── EXERCISE DETAIL DATA (Thai descriptions) ──
+var EX_DETAIL={
+'db-bench':{vid:'db-bench',muscles:[{n:'อกกลาง',m:true},{n:'อกบน',m:false},{n:'ไหล่หน้า',m:false},{n:'ไตรเซป',m:false}],cues:['<strong>นอนราบ</strong> เท้าเหยียบพื้น หลังแนบม้านั่ง','จับดัมเบล ข้อศอก <strong>45°</strong> จากลำตัว ไม่บานออก 90°','<strong>ลงช้า 3 วินาที</strong> จนดัมเบลระดับอก รู้สึกยืดอก','ดันขึ้น หายใจออก <strong>ไม่ล็อก</strong>ข้อศอกบนสุด','<strong>4 เซต × 10 ครั้ง</strong> พัก 75 วิ'],mistakes:['ข้อศอกบานออก 90° — เสี่ยงเอ็นไหล่บาดเจ็บ','ก้นลอยจากม้านั่ง — ลดประสิทธิภาพ','ลงเร็วเกิน — สูญเสีย eccentric ที่ทำให้กล้ามโต']},
+'inc-press':{vid:'inc-press',muscles:[{n:'อกบน',m:true},{n:'ไหล่หน้า',m:true},{n:'ไตรเซป',m:false}],cues:['ปรับม้านั่ง <strong>30–45 องศา</strong> ไม่เกินนี้','ดัมเบลระดับหัวอกบน ข้อศอก 45°','<strong>ลงช้า</strong> จนรู้สึกยืดอกบน','ดันตรงขึ้นเล็กน้อยเอียงเข้ากลาง'],mistakes:['เอียงม้านั่งมากเกิน — กลายเป็น shoulder press','ลงตื้นเกิน — อกบนไม่ทำงาน']},
+'lat-raise':{vid:'lat-raise',muscles:[{n:'ไหล่ด้านข้าง',m:true},{n:'ไหล่หน้า',m:false},{n:'trap บน',m:false}],cues:['ยืนตรง จับดัมเบลข้างลำตัว แขนเกือบตึง','<strong>ยกด้านข้างถึงระดับไหล่</strong> ไม่สูงกว่า','นิ้วก้อยหมุนขึ้นเล็กน้อย — เน้น lateral head','<strong>ลงช้า 3 วิ</strong> — eccentric สำคัญที่สุด','<strong>3 เซต × 15 ครั้ง</strong> น้ำหนักเบา ฟอร์มดีกว่า'],mistakes:['ใช้แรงแกว่งตัว — trap ทำงานแทนไหล่','ยกสูงกว่าไหล่ — เสี่ยง impingement']},
+'tri-down':{vid:'tri-down',muscles:[{n:'ไตรเซปทั้ง 3 หัว',m:true},{n:'ไหล่หลัง',m:false}],cues:['ยืนใกล้ cable ข้อศอก<strong>ชิดสีข้าง</strong>','<strong>กดลงสุด</strong> บีบไตรเซปค้าง 1 วิ','ข้อศอกตรึงตำแหน่ง ไม่แกว่ง','<strong>ลงช้า</strong> คืนขึ้นควบคุม'],mistakes:['ข้อศอกแกว่งหน้า-หลัง — ลำตัวช่วย','ไม่กดสุด — ไตรเซปทำงานไม่เต็ม']},
+'flex-push-up':{vid:'push-up',muscles:[{n:'อก',m:true},{n:'ไตรเซป',m:true},{n:'ไหล่หน้า',m:false},{n:'core',m:false}],cues:['มือกว้างกว่าไหล่เล็กน้อย ข้อศอก <strong>45°</strong>','<strong>ลำตัวตึงตรง</strong> ก้นไม่ยก ไม่แอ่น','ลงจนหน้าอกเกือบแตะพื้น','<strong>ดันขึ้นเร็ว</strong> — power output สูงสุด','ทำให้ได้มากที่สุด 2 เซต ไม่พักระหว่างเซต'],mistakes:['ก้นสูงขึ้น — กลายเป็น pike push-up','ลงตื้น — ไม่ได้ full range of motion']},
+'flex-plank':{vid:'plank',muscles:[{n:'transverse abs',m:true},{n:'obliques',m:false},{n:'glutes',m:false}],cues:['แขนตึง มือใต้ไหล่ตรง','<strong>บีบก้นและท้อง</strong> พร้อมกัน','สะโพกระดับเดียวกับไหล่','<strong>หายใจปกติ</strong> ไม่กลั้น','40 วินาที × 3 เซต พัก 30 วิ'],mistakes:['สะโพกยกสูง — core ไม่ทำงาน','สะโพกห้อยต่ำ — หลังบาดเจ็บ']},
+'pullup-flex':{vid:'pullup',muscles:[{n:'latissimus dorsi',m:true},{n:'bicep',m:true},{n:'mid-back',m:false}],cues:['จับบาร์ <strong>กว้างกว่าไหล่</strong> overhand grip','<strong>scapula ลง</strong> ก่อนดึง ไม่ shrug','ดึงอกชนบาร์หรือใกล้เคียง','<strong>ลงช้า 4 วินาที</strong> — eccentric สำคัญมาก','ใช้แบนด์ถ้าจำเป็น ดีกว่าข้ามท่า'],mistakes:['kipping — ใช้แรงแกว่ง ไม่ได้กล้ามเนื้อ','ลงไม่สุด — แขนไม่เหยียดเต็ม ROM']},
+'db-row':{vid:'db-row',muscles:[{n:'mid-back',m:true},{n:'rhomboids',m:true},{n:'latissimus',m:false},{n:'bicep',m:false}],cues:['<strong>ก้มตัว 45 องศา</strong> หลังตึงตรงเหมือนกระดาน','ดัมเบลห้อยลง แขนเหยียดตึง','ดึงขึ้นซี่โครง <strong>บีบสะบักค้าง 1 วิ</strong>','ข้อศอกชิดลำตัว ไม่กางออก','<strong>4 เซต × 10 ครั้ง</strong>'],mistakes:['หมุนลำตัวช่วยดึง — สูญเสีย isolation','ดึงสูงเกิน — trap ทำงานแทน back']},
+'face-pull':{vid:'face-pull',muscles:[{n:'rear deltoid',m:true},{n:'external rotators',m:true},{n:'trap กลาง',m:false}],cues:['ตั้ง cable ระดับหน้าผาก','ดึง <strong>เข้าหาหน้าผาก</strong> แขนขนานพื้น','<strong>บีบสะบักและหัวไหล่หลัง</strong> ค้าง 1 วิ','ข้อศอกอยู่ <strong>สูงกว่ามือ</strong>','15 ครั้ง × 3 เซต น้ำหนักเบา ฟอร์มสำคัญ'],mistakes:['ดึงต่ำเกิน — กลายเป็น cable row','น้ำหนักหนักเกิน — ฟอร์มพัง']},
+'db-curl':{vid:'db-curl',muscles:[{n:'bicep',m:true},{n:'brachialis',m:false}],cues:['<strong>ข้อศอกชิดสีข้าง</strong> ตลอด','งอขึ้นสม่ำเสมอ <strong>ลงสุดทุกครั้ง</strong>','หมุนมือออก supination ที่จุดสูงสุด','ไม่แกว่งลำตัว ไม่มีแรงเฉื่อย'],mistakes:['แกว่งลำตัว — ไม่ใช่ bicep ทำงาน','ลงไม่สุด — ย่อ ROM']},
+'hammer':{vid:'hammer',muscles:[{n:'brachialis',m:true},{n:'brachioradialis',m:true},{n:'bicep',m:false}],cues:['จับดัมเบล <strong>แนวตั้งเหมือนถือค้อน</strong>','งอขึ้นช้า <strong>ลงช้า 2 วิ</strong>','ทำสลับข้างหรือพร้อมกัน','ข้อศอกชิดตัวตลอด'],mistakes:['หมุนมือ — กลายเป็น regular curl','ลงเร็ว — เสียโอกาสสร้าง brachialis']},
+'goblet':{vid:'goblet',muscles:[{n:'quads',m:true},{n:'glutes',m:true},{n:'hamstrings',m:false},{n:'core',m:false}],cues:['จับดัมเบล <strong>ชิดอก</strong> แขนแนบ','เท้ากว้างกว่าไหล่เล็กน้อย ปลายเท้าชี้ออก','<strong>ลงให้สะโพกต่ำกว่าเข่า</strong> หลังตรง','เข่าชี้ตามปลายเท้า ไม่บิน','<strong>ดันขึ้นผ่านส้นเท้า</strong>'],mistakes:['หลังก้มไปหน้า — core อ่อน','เข่าบิน — วัย 43 เสี่ยงข้อเสื่อม']},
+'rdl':{vid:'rdl',muscles:[{n:'hamstrings',m:true},{n:'glutes',m:true},{n:'lower back',m:false}],cues:['ยืนตรง จับดัมเบลหน้าต้นขา','<strong>ก้มไปหน้า</strong> หลังตึง ดัมเบลเลื่อนลงตามขา','รู้สึก <strong>ตึง hamstring</strong> ที่จุดนั้นคือถูกต้อง','ดันสะโพกไปหน้า กลับขึ้น','<strong>4 เซต × 10 ครั้ง</strong>'],mistakes:['งอเข่ามากเกิน — กลายเป็น deadlift','หลังแอ่น — อันตรายสำหรับกระดูกสันหลัง']},
+'lunge':{vid:'lunge',muscles:[{n:'quads',m:true},{n:'glutes',m:true},{n:'hamstrings',m:false}],cues:['ก้าว<strong>ยาว</strong> ลำตัวตั้งตรงตลอด','เข่าหลัง<strong>เกือบแตะพื้น</strong> ไม่กระแทก','ดันขึ้นด้วย<strong>ส้นเท้าหน้า</strong>','ไม่โยกลำตัว สลับข้างทุกครั้ง'],mistakes:['เข่าหน้าเกยปลายเท้ามาก — เข่าล้า','ลำตัวเอียง — สูญเสีย balance']},
+'stepup':{vid:'stepup',muscles:[{n:'quads',m:true},{n:'glutes',m:true}],cues:['ก้าวขึ้น<strong>เต็มเท้า</strong>บนม้านั่ง','ดันขึ้นด้วย<strong>ส้นเท้าหน้าเท่านั้น</strong>','ขาหลัง<strong>ไม่ออกแรงช่วย</strong> ห้อยลง','ลงช้าควบคุม สลับข้างครบ'],mistakes:['ขาหลังดันช่วย — ลดประสิทธิภาพ','ก้าวลงเร็ว — เข่ารับแรงกระแทก']},
+'calf':{vid:'calf',muscles:[{n:'gastrocnemius',m:true},{n:'soleus',m:false}],cues:['ยืนบนขอบ <strong>ส้นเท้าห้อยลงได้</strong>','กดขึ้น<strong>สุด</strong> ค้าง 1 วิ','ลงช้า<strong>3 วิ</strong> จนส้นเท้าต่ำกว่าขอบ','<strong>3 เซต × 20 ครั้ง</strong>'],mistakes:['ลงไม่ถึง neutral — ไม่ได้ full stretch','กระโดดขึ้น — ใช้แรงเฉื่อยแทนกล้ามเนื้อ']},
+'dead-bug':{vid:'dead-bug',muscles:[{n:'transverse abs',m:true},{n:'obliques',m:false},{n:'hip flexors',m:false}],cues:['นอนหงาย<strong>กดหลังลงพื้น</strong>ตลอด','แขนตั้งขึ้น ขางอ 90°','<strong>สลับ</strong>: เหยียดแขนซ้าย+ขาขวาออก','ลงช้าควบคุม หายใจออกขณะเหยียด'],mistakes:['หลังลอยจากพื้น — core ไม่ทำงาน','เหยียดเร็ว — สูญเสีย core tension']},
+'bar-dip':{vid:'bar-dip',muscles:[{n:'อก (lower)',m:true},{n:'ไตรเซป',m:true},{n:'ไหล่หน้า',m:false}],cues:['จับราว <strong>ก้มตัวไปหน้าเล็กน้อย</strong> เน้นอก','ลงช้า<strong>3 วิ</strong> จนแขน 90° หรือมากกว่า','<strong>ดันขึ้น</strong> หายใจออก ไม่ล็อกข้อศอก','<strong>4 เซต × 10</strong>'],mistakes:['ลำตัวตรงเกิน — กลายเป็น tricep dip','ลงตื้น — อกไม่ทำงานเต็ม']},
+'pike':{vid:'pike',muscles:[{n:'ไหล่หน้าและบน',m:true},{n:'ไตรเซป',m:true}],cues:['ก้นชี้ขึ้น<strong>ทำมุม V คว่ำ</strong>','มือกว้างเท่าไหล่ นิ้วชี้ไปหน้า','งอข้อศอก<strong>ลงหัวเกือบแตะพื้น</strong>','ดันขึ้น รู้สึกไหล่ด้านหน้าทำงาน'],mistakes:['ก้นลดต่ำ — กลายเป็น push-up ธรรมดา','ข้อศอกบาน — ไหล่บาดเจ็บ']},
+'ido-push-up':{vid:'push-up',muscles:[{n:'อก',m:true},{n:'ไตรเซป',m:true},{n:'ไหล่หน้า',m:false}],cues:['มือกว้างกว่าไหล่ ข้อศอก<strong>45°</strong>','ลำตัวตึง<strong>เหมือนกระดาน</strong>','ลงช้า<strong>3 วิ</strong> อกเกือบแตะพื้น','ดันขึ้นเร็ว — power phase','ยากขึ้น: <strong>archer push-up</strong>'],mistakes:['ก้นยก — ลดแรงต้าน','ลำตัวแอ่น — หลังบาดเจ็บ']},
+'diamond':{vid:'diamond',muscles:[{n:'ไตรเซป',m:true},{n:'อกใน',m:true}],cues:['มือชิดกัน<strong>รูปเพชร</strong>ใต้อก','ข้อศอก<strong>ชิดลำตัว</strong> ไม่บานออก','ลงช้า<strong>3 วิ</strong>','ยากขึ้น: ยกเท้าบนม้านั่ง'],mistakes:['ข้อศอกบาน — กลายเป็น push-up ธรรมดา','มือห่างเกิน — ไม่ใช่ diamond grip']},
+'ido-plank':{vid:'plank',muscles:[{n:'transverse abs',m:true},{n:'glutes',m:false}],cues:['แขนตึง มือใต้ไหล่','บีบก้น + ท้อง + quad พร้อมกัน','สะโพก<strong>ระดับเดียว</strong>กับไหล่','40 วิ × 3 เซต'],mistakes:['สะโพกยก — ลดความเข้ม','คิดแค่ "อดทน" — ต้องบีบกล้ามเนื้อด้วย']},
+'lsit':{vid:'lsit',muscles:[{n:'core',m:true},{n:'hip flexors',m:true},{n:'ไหล่กด',m:true}],cues:['เกาะราวหรือพื้น<strong>กดลงแรง</strong>','ยกก้นขึ้น ถ้าไม่ได้ให้<strong>ยก tuck</strong> ก่อน','เป้าหมาย: เหยียดขาออกตรง','ค้าง<strong>15 วิ</strong> × 3 เซต'],mistakes:['ยกไม่ขึ้น — ทำ tuck แทนก่อน','แขนงอ — ควรตึง']},
+'pullup-ido':{vid:'pullup',muscles:[{n:'latissimus dorsi',m:true},{n:'bicep',m:true}],cues:['จับกว้าง<strong>กว่าไหล่</strong>','scapula pull ลงก่อนดึง','ดึงอก<strong>ชนบาร์</strong>','<strong>ลงช้า 4 วิ</strong>'],mistakes:['กระโดดช่วย — ไม่นับ','ลงไม่สุด — ROM สั้น']},
+'inv-row':{vid:'inv-row',muscles:[{n:'mid-back',m:true},{n:'bicep',m:false},{n:'rear delt',m:false}],cues:['นอนใต้บาร์<strong>ลำตัวตึง</strong>เหมือน plank','จับกว้างกว่าไหล่','ดึง<strong>อกชนบาร์</strong> บีบสะบัก','ลงช้า 3 วิ'],mistakes:['สะโพกห้อยลง — core หย่อน','ดึงไม่ถึงบาร์ — ลด angle']},
+'ring-row':{vid:'ring-row',muscles:[{n:'mid-back',m:true},{n:'bicep',m:false}],cues:['เอียงตัวมากขึ้น =<strong>ยากขึ้น</strong>','ดึงมือ<strong>ชิดอก</strong> บีบสะบัก','ลำตัวตึงตลอด ไม่โยก','ปรับ angle ตามความสามารถ'],mistakes:['แกว่งวง — ไม่ใช่ strength training','ลำตัวโค้งงอ — สูญเสียประสิทธิภาพ']},
+'neg-pull':{vid:'neg-pull',muscles:[{n:'latissimus dorsi',m:true},{n:'bicep',m:true}],cues:['<strong>กระโดดขึ้น</strong>ถึงจุดสูงสุด','<strong>ลงช้ามาก 6–8 วินาที</strong> ควบคุมตลอด','รู้สึกแรงต้านทาง eccentric','4 ครั้ง × 3 เซต — น้อยแต่หนักมาก'],mistakes:['ลงเร็ว — ไม่ได้ประโยชน์','ปล่อยตัวตก — เสี่ยงข้อไหล่']},
+'hang-knee':{vid:'hang-knee',muscles:[{n:'core',m:true},{n:'hip flexors',m:true},{n:'grip',m:false}],cues:['ห้อยบาร์<strong>ไม่แกว่ง</strong>','ยก knee<strong>ขึ้นถึงอก</strong>','ลงช้า<strong>2 วิ</strong> ไม่ปล่อยตก','15 ครั้ง × 3 เซต'],mistakes:['แกว่งตัวช่วย — momentum ไม่ใช่ core','ลงกระแทก — เสี่ยงหัวไหล่']},
+'dead-hang':{vid:'dead-hang',muscles:[{n:'grip',m:true},{n:'forearms',m:true},{n:'shoulder decompression',m:false}],cues:['จับบาร์<strong>เต็มมือ</strong> นิ้วทุกนิ้วรัด','ห้อยตัว<strong>ผ่อนคลายไหล่</strong>','หายใจลึก กระดูกสันหลัง<strong>ยืดตัวเอง</strong>','25 วิ × 3 เซต'],mistakes:['shrug ไหล่ขึ้น — กระดูกสันหลังไม่ยืด','กลั้นหายใจ — ตึงโดยไม่จำเป็น']},
+'bulg-split':{vid:'bulg-split',muscles:[{n:'quads',m:true},{n:'glutes',m:true},{n:'hip flexors',m:false}],cues:['วางเท้าหลัง<strong>บนม้านั่ง</strong> ก้าวยาวไปหน้า','ลงเข่าหลัง<strong>เกือบแตะพื้น</strong> หลังตรง','ดันขึ้นด้วย<strong>ส้นเท้าหน้า</strong>','10 ครั้ง/ข้าง × 4 เซต'],mistakes:['เข่าหน้าเกยปลายเท้ามาก — ก้าวยาวขึ้น','ลำตัวก้ม — core หย่อน']},
+'glute-br':{vid:'glute-br',muscles:[{n:'glutes',m:true},{n:'hamstrings',m:true}],cues:['นอนหงาย เข่างอ เท้าวางใกล้ก้น','ยกสะโพก<strong>ขึ้นสุด บีบ glute ค้าง 2 วิ</strong>','ลงช้า<strong>ไม่แตะพื้น</strong> แล้วยกซ้ำ','20 ครั้ง × 3 เซต'],mistakes:['ยกน้อยเกิน — glute ไม่ squeeze','แตะพื้นทุกครั้ง — เสีย tension']},
+'bw-squat':{vid:'bw-squat',muscles:[{n:'quads',m:true},{n:'glutes',m:false}],cues:['เท้ากว้างเท่าไหล่ ปลายเท้า<strong>ชี้ออกเล็กน้อย</strong>','แขนเหยียดหน้า ช่วยทรงตัว','ลง<strong>สะโพกต่ำกว่าเข่า</strong> ทุกครั้ง','20 ครั้งเร็วๆ — metabolic burn'],mistakes:['ลงตื้น — ไม่ได้ full quad','ปลายเท้าชี้ตรง — เข่าบิน']},
+'mtn-climb':{vid:'mtn-climb',muscles:[{n:'core',m:true},{n:'hip flexors',m:true},{n:'cardio',m:false}],cues:['ท่า plank แขนตึง','<strong>สลับ</strong>ดึงเข่าเข้าหาอกเร็วๆ','<strong>30 วิ ทำ</strong> พัก 15 วิ × 3 รอบ','core ตึงตลอด ก้นไม่ยก'],mistakes:['ก้นยกขึ้น — กลายเป็น pike','ช้าเกิน — ไม่ได้ HIIT effect']},
+'hollow':{vid:'hollow',muscles:[{n:'transverse abs',m:true},{n:'hip flexors',m:false}],cues:['นอนหงาย<strong>กดหลังลงพื้น</strong>ตลอด','แขนเหนือหัว ขาตึง<strong>ยกเล็กน้อย</strong>','รักษา<strong>tension</strong> ตลอด 30 วิ','ถ้ายากเกิน: งอเข่าก่อน'],mistakes:['หลังลอย — core ยังไม่แข็งพอ ลด range','หายใจไม่ออก — หายใจสั้นๆ ได้']},
+'stepup-ido':{vid:'stepup',muscles:[{n:'quads',m:true},{n:'glutes',m:true}],cues:['ก้าวขึ้น<strong>เต็มเท้า</strong>บนม้านั่งสูง','ดันขึ้น<strong>ส้นเท้าหน้าเท่านั้น</strong>','ขาหลัง<strong>ห้อยลง ไม่ออกแรง</strong>','12 ครั้ง/ข้าง × 3 เซต'],mistakes:['ขาหลังดัน — ลดประสิทธิภาพ','ก้าวลงกระแทก — เข่ารับแรง']}
+};
+
+// Build exercise detail with YouTube + Thai descriptions
+var openCards={};
+function buildExDetail(key){
+  if(!key||!EX_DETAIL[key])return'';
+  var d=EX_DETAIL[key];
+  var vid=d.vid?VIDEOS[d.vid]:null;
+  var h='';
+  // YouTube section — thumbnail + open link (ใช้ได้กับ local file บน iOS ทุกรุ่น)
+  if(vid){
+    var ytUrl='https://www.youtube.com/watch?v='+vid;
+    var thumbUrl='https://img.youtube.com/vi/'+vid+'/hqdefault.jpg';
+    h+='<div class="yt-section">'
+      +'<a class="yt-thumb-wrap" href="'+ytUrl+'" target="_blank" rel="noopener">'
+      +'<img class="yt-thumb" src="'+thumbUrl+'" alt="tutorial" referrerpolicy="no-referrer" onerror="this.style.minHeight=\'110px\';this.style.background=\'#0D1020\'">'
+      +'<div class="yt-play-btn"><div class="yt-play-icon"></div></div>'
+      +'</a>'
+      +'<a class="yt-open-btn" href="'+ytUrl+'" target="_blank" rel="noopener">▶ เปิดดูคลิปบน YouTube</a>'
+      +'<div class="yt-note">แตะรูปหรือปุ่ม → เปิดใน Safari / YouTube app · ต้องต่ออินเทอร์เน็ต</div>'
+      +'</div>';
+  }
+  // Text detail
+  h+='<div class="ex-text-detail">';
+  h+='<div class="muscle-row">';
+  for(var i=0;i<d.muscles.length;i++)h+='<span class="muscle-pill '+(d.muscles[i].m?'muscle-main':'muscle-sec')+'">'+d.muscles[i].n+'</span>';
+  h+='</div>';
+  h+='<div class="cue-section-title">ฟอร์มสำคัญ</div><div class="cue-steps">';
+  for(var i=0;i<d.cues.length;i++)h+='<div class="cue-step"><div class="cue-n">'+(i+1)+'</div><div class="cue-t">'+d.cues[i]+'</div></div>';
+  h+='</div>';
+  if(d.mistakes&&d.mistakes.length){
+    h+='<div class="mistake-box"><div class="mistake-title">❌ ข้อผิดพลาดที่พบบ่อย</div>';
+    for(var i=0;i<d.mistakes.length;i++)h+='<div class="mistake-item"><span class="mistake-x">✕</span><span>'+d.mistakes[i]+'</span></div>';
+    h+='</div>';
+  }
+  h+='</div>';
+  return h;
+}
+function makeCard(ex,i,color){
+  var hasDetail=!!(ex.key&&EX_DETAIL[ex.key]);
+  var id='c'+i;
+  var h='<div class="ex-card'+(hasDetail?' open-able':'')+'" id="'+id+'">'
+    +'<div class="ex-hdr" onclick="toggleCard(\''+id+'\','+hasDetail+',\''+ex.key+'\')">'
+    +'<div class="ex-num">'+String(i+1).padStart(2,'0')+'</div>'
+    +'<div class="ex-info"><div class="ex-name">'+ex.n+'</div><div class="ex-desc">'+ex.d+'</div>'
+    +(ex.why?'<div class="ex-why-inline">→ '+ex.why+'</div>':'')
+    +'</div><div class="ex-right"><div class="ex-sets" style="color:'+color+'">'+ex.s+'</div>'
+    +'<span class="ex-type '+TCLS[ex.t]+'">'+TLBL[ex.t]+'</span>'
+    +(hasDetail?'<span class="ex-chev">▾</span>':'')+'</div></div>';
+  if(hasDetail)h+='<div class="ex-detail-wrap" id="dw-'+id+'">'+buildExDetail(ex.key)+'</div>';
+  return h+'</div>';
+}
+function toggleCard(id,hasDetail,key){
+  if(!hasDetail)return;
+  var card=document.getElementById(id);
+  var wrap=document.getElementById('dw-'+id);
+  var open=card.classList.toggle('open');
+  if(wrap)wrap.style.maxHeight=open?'900px':'0';
+}
+
+// ── WORKOUT DATA ──
+var MAY_GYM={18:{g:'A'},20:{g:'B'},22:{g:'C'},25:{g:'A'},27:{g:'B'},29:{g:'C'}};
+var JUN_GYM={1:{g:'A'},3:{g:'B'},5:{g:'C'},8:{g:'A'},10:{g:'B'},12:{g:'C'},15:{g:'A'},17:{g:'B'},19:{g:'C'},22:{g:'A'},24:{g:'B'},26:{g:'C'},29:{g:'A'}};
+var W_FLEX={
+A:{title:'PUSH DAY',sub:'อก · ไหล่ · แขนหลัง',color:'#8F7FF5',subcolor:'rgba(143,127,245,.7)',dur:55,why:'Compound กดหนักก่อน → isolation ท้าย สร้าง V-shape',ex:[
+  {n:'Warm-up',d:'Band pull-apart 15 ครั้ง + วนไหล่ + DB press เบา 10 ครั้ง',s:'7 นาที',t:'warm',key:null,why:null},
+  {n:'DB Bench Press',d:'นอนราบ ข้อศอก 45° ลงช้า 3 วิ กดขึ้นไม่ล็อก',s:'4 × 10',t:'weight',key:'db-bench',why:'Main compound — อกกลางและบน สร้างความหนา'},
+  {n:'Incline DB Press',d:'เอียง 30–45° เน้นอกบน ลงจนรู้สึกยืด',s:'3 × 10',t:'weight',key:'inc-press',why:'อกบนคือส่วนที่ทำให้หน้าอกดูดี ไม่แฟบ'},
+  {n:'DB Lateral Raise',d:'ยกด้านข้างถึงระดับไหล่ ลงช้า 3 วิ',s:'3 × 15',t:'weight',key:'lat-raise',why:'ไหล่กว้าง = ลีนขึ้นทันที'},
+  {n:'Cable Tricep Pushdown',d:'ข้อศอกชิดตัว กดลงสุด บีบค้าง 1 วิ',s:'3 × 12',t:'weight',key:'tri-down',why:'แขนใหญ่ขึ้น เสื้อดูดีขึ้นทันที'},
+  {n:'Push-up (finisher)',d:'ทำให้ได้มากที่สุด 2 เซต ไม่พักระหว่างเซต',s:'2 × max',t:'cali',key:'flex-push-up',why:'Pump อกก่อนกลับ'},
+  {n:'Plank',d:'แขนตึง core บีบ 40 วิ',s:'3 × 40 วิ',t:'cali',key:'flex-plank',why:'Core แน่น ทุกท่าหนักขึ้น'},
+],tip:'พัก 75 วิ ระหว่างเซต · เพิ่ม DB 2 kg เมื่อ 4×10 ง่าย · Lateral raise รู้สึกไหม้ที่ไหล่'},
+B:{title:'PULL DAY',sub:'หลัง · บ่า · แขนหน้า',color:'#FF9F45',subcolor:'rgba(255,159,69,.7)',dur:60,why:'Pull-up + Row = หลังกว้าง+หนา · Face Pull แก้ไหล่ห่อ วัย 43',ex:[
+  {n:'Warm-up',d:'Dead hang 2×15 วิ + band row + cat-cow',s:'7 นาที',t:'warm',key:null,why:null},
+  {n:'Pull-up',d:'จับกว้างกว่าไหล่ ดึงอกชนบาร์ ลงช้า 4 วิ',s:'4 × max',t:'cali',key:'pullup-flex',why:'กว้างและหนาพร้อมกัน — ท่าที่ดีที่สุด'},
+  {n:'DB Bent-over Row',d:'ก้มตัว 45° หลังตึง ดึงขึ้นซี่โครง บีบสะบัก',s:'4 × 10',t:'weight',key:'db-row',why:'สร้างหลังหนา mid-back เต็ม'},
+  {n:'Cable Face Pull',d:'ดึงเข้าหน้าผาก แขนขนานพื้น บีบสะบัก',s:'3 × 15',t:'weight',key:'face-pull',why:'แก้ไหล่ห่อจากนั่งนาน'},
+  {n:'DB Bicep Curl',d:'ข้อศอกชิดตัว งอขึ้น ลงสุดทุกครั้ง',s:'3 × 12',t:'weight',key:'db-curl',why:'แขนหน้าสวย'},
+  {n:'Hammer Curl',d:'จับแนวตั้ง ลงช้า 2 วิ สลับข้าง',s:'3 × 12',t:'weight',key:'hammer',why:'แขนดูหนาขึ้น'},
+  {n:'Cardio เบา',d:'เดินเร็วหรือจักรยาน 65% max HR',s:'15 นาที',t:'cardio',key:null,why:null},
+],tip:'Face Pull ห้ามข้าม · Pull-up ทำก่อนเสมอ'},
+C:{title:'LEGS DAY',sub:'ขา · สะโพก · แกนกลาง',color:'#FF5F9E',subcolor:'rgba(255,95,158,.7)',dur:60,why:'ซ้อมขาหนัก = testosterone สูงขึ้น = ทั้งร่างกายใหญ่เร็วขึ้น',ex:[
+  {n:'Warm-up',d:'Hip circle + Leg swing + Goblet squat เบา 10 ครั้ง',s:'8 นาที',t:'warm',key:null,why:null},
+  {n:'Goblet Squat',d:'จับดัมเบลชิดอก สควอทลงสะโพกต่ำกว่าเข่า',s:'4 × 10',t:'weight',key:'goblet',why:'ปลอดภัยสำหรับกระดูกสันหลัง 43 ปี'},
+  {n:'DB Romanian Deadlift',d:'ก้มหลังตึง ดัมเบลเลื่อนตามขา รู้สึกตึง hamstring',s:'4 × 10',t:'weight',key:'rdl',why:'ป้องกันปวดหลัง'},
+  {n:'DB Walking Lunge',d:'ก้าวยาว ลำตัวตรง สลับข้าง',s:'3 × 10/ข้าง',t:'weight',key:'lunge',why:'แก้ความไม่สมดุล burn สูง'},
+  {n:'DB Step-up',d:'ก้าวขึ้นม้านั่งสูง ดันขึ้นส้นเท้าหน้า',s:'3 × 10/ข้าง',t:'weight',key:'stepup',why:'เข่าแข็งแรง'},
+  {n:'Calf Raise',d:'ยืนบนขอบ กดขึ้นสุด ค้าง 1 วิ ลงช้า 3 วิ',s:'3 × 20',t:'weight',key:'calf',why:'น่องชัดเจน'},
+  {n:'Dead Bug',d:'นอนหงาย กดหลังลงพื้น สลับแขนขา ลงช้า',s:'3 × 10/ข้าง',t:'cali',key:'dead-bug',why:'Core ปลอดภัยที่สุด 43 ปี'},
+],tip:'RDL รู้สึก hamstring ตึงถึงดี · อย่าก้มหลังแอ่น · กิน protein หลังซ้อมทันที'}
+};
+var W_IDO={
+A:{title:'PUSH DAY',sub:'อก · ไหล่ · แขนหลัง',color:'#C8F542',subcolor:'rgba(200,245,66,.7)',dur:55,why:'Dip + Push-up = chest full ROM ข้อต่อแข็งแรงกว่าเวท',ex:[
+  {n:'Warm-up',d:'วนไหล่ + wrist circle + arm swing + 10 skim push-up',s:'7 นาที',t:'warm',key:null,why:null},
+  {n:'Parallel Bar Dip',d:'ก้มตัวหน้าเล็กน้อย ลงช้า 3 วิ จนแขน 90°',s:'4 × 10',t:'cali',key:'bar-dip',why:'Compound ที่ดีที่สุดสำหรับ bodyweight chest'},
+  {n:'Pike Push-up',d:'ก้นชี้ขึ้น V คว่ำ ลงหัวเกือบแตะพื้น',s:'3 × 10',t:'cali',key:'pike',why:'ไหล่กว้าง V-taper โดยไม่ต้องมีดัมเบล'},
+  {n:'Push-up',d:'ฟอร์มมาตรฐาน ลงช้า 3 วิ หรือ archer ถ้าง่ายเกิน',s:'3 × 15',t:'cali',key:'ido-push-up',why:'อก volume สูง pump ดี'},
+  {n:'Diamond Push-up',d:'มือชิดรูปเพชร ข้อศอกชิดตัว ลงช้า',s:'3 × 10',t:'cali',key:'diamond',why:'Inner chest + tricep detail'},
+  {n:'Plank',d:'แขนตึง body line ตรง บีบ glute + core',s:'3 × 40 วิ',t:'cali',key:'ido-plank',why:'Core แน่น ทุกท่ามีประสิทธิภาพ'},
+  {n:'L-sit / Tuck Hold',d:'เกาะราวหรือพื้น ยกก้นขึ้น เหยียดขาถ้าไหว',s:'3 × 15 วิ',t:'cali',key:'lsit',why:'Core + ไหล่กด = ความแข็งแกร่งที่โชว์ได้'},
+],tip:'Dip ต้องรู้สึก chest ไม่ใช่แค่แขน — ก้มตัวช่วยได้'},
+B:{title:'PULL DAY',sub:'หลัง · บ่า · แขนหน้า',color:'#FF9F45',subcolor:'rgba(255,159,69,.7)',dur:60,why:'Pull-up คือ barbell row ของ calisthenics',ex:[
+  {n:'Warm-up',d:'Dead hang 2×20 วิ + scapula pull 10 ครั้ง',s:'7 นาที',t:'warm',key:null,why:null},
+  {n:'Pull-up',d:'จับกว้าง ดึงอกชนบาร์ ลงช้า 4 วิ',s:'4 × max',t:'cali',key:'pullup-ido',why:'กว้างและหนาพร้อมกัน — เป้า 3×10'},
+  {n:'Australian Pull-up',d:'นอนใต้บาร์ ลำตัวตึง ดึงอกชนบาร์ ลงช้า',s:'3 × 12',t:'cali',key:'inv-row',why:'Mid-back เสริม pull-up'},
+  {n:'Ring Row',d:'จับวงแหวน เอียงมากขึ้น = ยากขึ้น',s:'3 × 12',t:'cali',key:'ring-row',why:'ปรับความยากได้ง่าย'},
+  {n:'Negative Pull-up',d:'กระโดดขึ้นจุดสูงสุด แล้วลงช้า 6–8 วินาที',s:'3 × 4',t:'cali',key:'neg-pull',why:'สร้าง pull-up strength เร็วที่สุด'},
+  {n:'Hanging Knee Raise',d:'ห้อยบาร์ ยก knee ขึ้นถึงอก ลงช้า ไม่แกว่ง',s:'3 × 15',t:'cali',key:'hang-knee',why:'Core + grip + ลีนขึ้น'},
+  {n:'Dead Hang',d:'ห้อยตัวเต็ม ผ่อนคลาย หายใจลึก',s:'3 × 25 วิ',t:'cali',key:'dead-hang',why:'กระดูกสันหลังยืดหลังกะยาว'},
+],tip:'Pull-up เพิ่ม 1 rep ทุก 2 อาทิตย์ คือก้าวหน้าที่ดีมาก'},
+C:{title:'LEGS DAY',sub:'ขา · สะโพก · แกนกลาง',color:'#FF5F9E',subcolor:'rgba(255,95,158,.7)',dur:60,why:'Bulgarian split squat กระตุ้น testosterone ไม่แพ้ barbell squat',ex:[
+  {n:'Warm-up',d:'Hip circle + Leg swing + Cossack squat 5/ข้าง + BW squat 15',s:'8 นาที',t:'warm',key:null,why:null},
+  {n:'Bulgarian Split Squat',d:'วางเท้าหลังบนม้านั่ง ก้าวยาว ลงเข่าหลังเกือบแตะพื้น',s:'4 × 10/ข้าง',t:'cali',key:'bulg-split',why:'ท่าขาที่หนักที่สุดใน bodyweight'},
+  {n:'Step-up (สูง)',d:'ก้าวขึ้นม้านั่งสูง ดันขึ้นส้นเท้าหน้า ขาหลังห้ามช่วย',s:'3 × 12/ข้าง',t:'cali',key:'stepup-ido',why:'Quad + glute + balance'},
+  {n:'Glute Bridge',d:'นอนหงาย ยกสะโพกขึ้นสุด บีบ glute ค้าง 2 วิ ลงช้า',s:'3 × 20',t:'cali',key:'glute-br',why:'Glute ใหญ่ที่สุด เผาไขมันเยอะ'},
+  {n:'BW Squat',d:'ลงต่ำ 20 ครั้ง หรือ jump squat ถ้าต้องการ burn',s:'3 × 20',t:'cali',key:'bw-squat',why:'Endurance + metabolic burn'},
+  {n:'Mountain Climber',d:'ท่า plank สลับดึงเข่าเข้าหาอกเร็ว 30 วิ พัก 15 วิ',s:'3 × 30 วิ',t:'hiit',key:'mtn-climb',why:'HIIT เผาไขมันต่อเนื่อง'},
+  {n:'Hollow Body Hold',d:'นอนหงาย กดหลังลงพื้น ยกแขน+ขาขึ้นเล็กน้อย',s:'3 × 30 วิ',t:'cali',key:'hollow',why:'Core foundation ทุกท่าแน่นขึ้น'},
+],tip:'Bulgarian split squat เจ็บขามาก 2-3 วันแรก ปกติ · Mountain climber ทำเร็ว = กำลังเผาไขมัน'}
+};
+
+function showDetail(d,dow,g,month){
+  var gym=gymOf(month,d);var gm=gymMeta(gym);
+  var W=gym==='flex'?W_FLEX:W_IDO;var w=W[g];
+  var mthThai=month==='may'?'พฤษภาคม':'มิถุนายน';
+  var et=endTime(gm.time,w.dur);var tr=gm.time.replace(' น.','')+' – '+et;
+  var html='';
+  for(var i=0;i<w.ex.length;i++){if(i===1)html+='<div class="sec-div"><span>Main Sets</span></div>';html+=makeCard(w.ex[i],i,w.color);}
+  var det=document.getElementById('detail');
+  det.innerHTML='<div class="det-head"><div class="det-bg-dots"></div>'
+    +'<span class="det-gym-pill '+gm.pill+'">'+gm.icon+' '+gm.name+'</span>'
+    +'<div class="det-date">'+DOWFULL[dow]+' · '+d+' '+mthThai+' 2569</div>'
+    +'<div class="det-title" style="color:'+w.color+'">'+w.title+'</div>'
+    +'<div class="det-sub">'+w.sub+'</div>'
+    +'<div class="det-meta"><span class="meta-chip">⏱ ~'+w.dur+' นาที</span><span class="meta-chip">🕑 '+tr+'</span></div>'
+    +(w.why?'<div class="det-why"><p>💡 '+w.why+'</p></div>':'')
+    +'</div><div class="sec-title">Workout — แตะชื่อท่าเพื่อดูคลิป + ฟอร์ม</div>'
+    +'<div class="ex-list">'+html+'</div>'
+    +'<div class="tip-box"><p>⚡ '+w.tip+'</p></div>';
+  det.className='detail visible';
+  openCards={};
+  setTimeout(function(){det.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+}
+
+function buildCal(gridId,dowId,gymMap,shiftFn,totalDays,startDow,month){
+  var dowEl=document.getElementById(dowId);
+  for(var i=0;i<DOW.length;i++){var e=document.createElement('div');e.className='dow';e.textContent=DOW[i];dowEl.appendChild(e);}
+  var grid=document.getElementById(gridId);
+  for(var i=0;i<startDow;i++){var e=document.createElement('div');e.className='day empty';grid.appendChild(e);}
+  for(var d=1;d<=totalDays;d++){
+    (function(day){
+      var s=shiftFn(day);var dow=(startDow+day-1)%7;var gd=gymMap[day];var g=gd?gd.g:null;
+      var gym=g?gymOf(month,day):null;
+      var el=document.createElement('div');var cls='day '+s;if(g)cls+=' gym-day gym-'+gym+'-'+g;
+      el.className=cls;
+      var pipColor=s==='morning'?'#4DA8FF':s==='holiday'?'#FFD166':'#8F7FF5';
+      var gm=gym?gymMeta(gym):null;
+      var h='<div class="d-hdr"><div><div class="d-num">'+day+'</div><div class="d-dow">'+DOW[dow]+'</div></div><div class="d-pip" style="background-color:'+pipColor+';"></div></div>';
+      if(g){var tagCls=g==='A'?('tag-A-'+gym):g==='B'?'tag-B':'tag-C';h+='<span class="gym-tag '+tagCls+'">'+g+'·'+(g==='A'?'Push':g==='B'?'Pull':'Legs')+'</span><div class="d-time">'+gm.time+'</div><div class="d-gym-name">'+gm.short+'</div>';}
+      else if(s==='holiday')h+='<div class="d-note" style="color:#FFD166;">🌟 หยุด</div>';
+      else if(month==='may'&&day===15)h+='<div class="d-note" style="color:#8F7FF5;">🌙 กะดึก</div>';
+      else if(month==='may'&&day===30)h+='<div class="d-note" style="color:#4DA8FF;">☀️ กะเช้า</div>';
+      else if(month==='jun'&&day===17)h+='<div class="d-note" style="color:#8F7FF5;">🌙 กะดึก</div>';
+      el.innerHTML=h;
+      if(g){el.addEventListener('click',function(){var all=document.querySelectorAll('.day.selected');for(var j=0;j<all.length;j++)all[j].classList.remove('selected');el.classList.add('selected');showDetail(day,dow,g,month);});}
+      grid.appendChild(el);
+    })(d);
+  }
+}
+buildCal('calMay','dowMay',MAY_GYM,shiftMay,31,5,'may');
+buildCal('calJun','dowJun',JUN_GYM,shiftJun,30,1,'jun');
+
+// SESSION GRID (fixed labels)
+var allSess=[
+  {d:18,g:'A',month:'may',dow:1,mth:'พ.ค.'},{d:20,g:'B',month:'may',dow:3,mth:'พ.ค.'},{d:22,g:'C',month:'may',dow:5,mth:'พ.ค.'},
+  {d:25,g:'A',month:'may',dow:1,mth:'พ.ค.'},{d:27,g:'B',month:'may',dow:3,mth:'พ.ค.'},{d:29,g:'C',month:'may',dow:5,mth:'พ.ค.'},
+  {d:1,g:'A',month:'jun',dow:1,mth:'มิ.ย.',phase:'ido'},{d:3,g:'B',month:'jun',dow:3,mth:'มิ.ย.',phase:'ido'},{d:5,g:'C',month:'jun',dow:5,mth:'มิ.ย.',phase:'ido'},
+  {d:8,g:'A',month:'jun',dow:1,mth:'มิ.ย.',phase:'ido'},{d:10,g:'B',month:'jun',dow:3,mth:'มิ.ย.',phase:'ido'},{d:12,g:'C',month:'jun',dow:5,mth:'มิ.ย.',phase:'ido'},
+  {d:15,g:'A',month:'jun',dow:1,mth:'มิ.ย.',phase:'ido'},
+  {d:17,g:'B',month:'jun',dow:3,mth:'มิ.ย.',phase:'flex'},{d:19,g:'C',month:'jun',dow:5,mth:'มิ.ย.',phase:'flex'},
+  {d:22,g:'A',month:'jun',dow:1,mth:'มิ.ย.',phase:'flex'},{d:24,g:'B',month:'jun',dow:3,mth:'มิ.ย.',phase:'flex'},{d:26,g:'C',month:'jun',dow:5,mth:'มิ.ย.',phase:'flex'},
+  {d:29,g:'A',month:'jun',dow:1,mth:'มิ.ย.',phase:'flex'}
+];
+var sg=document.getElementById('sessGrid');
+var blocks=[
+  {key:'may',name:'พฤษภาคม',gym:'flex',sessions:allSess.filter(function(s){return s.month==='may';})},
+  // มิถุนา (กะเช้า) — I Do Calisthenics
+  {key:'jun-ido',name:'มิถุนา (กะเช้า)',gym:'ido',sessions:allSess.filter(function(s){return s.month==='jun'&&s.phase==='ido';})},
+  // มิถุนา (กะดึก) — FLEX Fitness
+  {key:'jun-flex',name:'มิถุนา (กะดึก)',gym:'flex',sessions:allSess.filter(function(s){return s.month==='jun'&&s.phase==='flex';})}
+];
+for(var bi=0;bi<blocks.length;bi++){
+  (function(bl){
+    var gm=gymMeta(bl.gym);var block=document.createElement('div');block.className='sess-block';
+    var chips='';
+    for(var si=0;si<bl.sessions.length;si++){
+      var sess=bl.sessions[si];
+      var badgeCls=sess.g==='A'?'badge-A-'+bl.gym:sess.g==='B'?'badge-B':'badge-C';
+      chips+='<div class="sess-chip chip-'+bl.gym+'-'+sess.g+'" id="sc-'+sess.month+'-'+sess.d+'">'
+        +'<div class="chip-date">'+sess.d+'</div><div class="chip-dow">'+DOWFULL[sess.dow].slice(0,3)+'</div>'
+        +'<span class="chip-badge '+badgeCls+'">'+sess.g+' '+(sess.g==='A'?'Push':sess.g==='B'?'Pull':'Legs')+'</span>'
+        +'<div class="chip-time">'+gm.time.replace(' น.','')+'</div>'
+        +'<div class="chip-gym chip-gym-'+bl.gym+'">'+gm.short+'</div></div>';
+    }
+    var gymColor=bl.gym==='flex'?'color:#8F7FF5':'color:#C8F542';
+    block.innerHTML='<div class="sess-block-hdr"><span class="sess-block-name">'+bl.name+'</span><span class="sess-block-gym" style="'+gymColor+'">'+gm.short+'</span><span class="sess-block-count">'+bl.sessions.length+' sess</span></div><div class="sess-grid">'+chips+'</div>';
+    sg.appendChild(block);
+  })(blocks[bi]);
+}
+for(var i=0;i<allSess.length;i++){
+  (function(sess){
+    var el=document.getElementById('sc-'+sess.month+'-'+sess.d);if(!el)return;
+    el.addEventListener('click',function(){
+      switchMonth(sess.month);
+      var all=document.querySelectorAll('.day.selected');for(var j=0;j<all.length;j++)all[j].classList.remove('selected');
+      var gym=gymOf(sess.month,sess.d);
+      var days=document.getElementById(sess.month==='may'?'calMay':'calJun').querySelectorAll('.day.gym-'+gym+'-'+sess.g);
+      for(var j=0;j<days.length;j++){if(days[j].querySelector('.d-num')&&days[j].querySelector('.d-num').textContent==String(sess.d)){days[j].classList.add('selected');break;}}
+      showDetail(sess.d,sess.dow,sess.g,sess.month);
+    });
+  })(allSess[i]);
+}
+function switchMonth(m){
+  document.getElementById('tab-may').className='tab'+(m==='may'?' active':'');
+  document.getElementById('tab-jun').className='tab'+(m==='jun'?' active':'');
+  document.getElementById('panel-may').className='month-panel'+(m==='may'?' active':'');
+  document.getElementById('panel-jun').className='month-panel'+(m==='jun'?' active':'');
+}
+setTimeout(function(){var f=document.querySelector('#calMay .day.gym-day');if(f)f.click();},400);
+</script>
+</body>
+</html>
