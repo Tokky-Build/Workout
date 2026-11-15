@@ -1,0 +1,20 @@
+{
+  "enabledPlugins": {
+    "argo-guide@argo-video": true,
+    "explainroo@explainroo": true
+  },
+  "extraKnownMarketplaces": {
+    "argo-video": {
+      "source": {
+        "source": "github",
+        "repo": "shreyaskarnik/argo"
+      }
+    },
+    "explainroo": {
+      "source": {
+        "source": "github",
+        "repo": "vincentsch/explainroo"
+      }
+    }
+  }
+}
