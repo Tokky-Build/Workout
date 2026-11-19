@@ -1,28 +1,29 @@
 # Offers lens
-Score: 4/10 | Vote: FUND IF
+Score: 3/10 | Vote: FUND IF
 
 ## What is strong
-- Reach is easy: YouTube and Shorts are where Thai 20-35s already look for gadget and desk-setup ideas, and affiliate links work before monetisation thresholds.
-- Cost to test is tiny (5,000+ THB a month, one person), so a wrong guess is cheap.
-- Buyers already have a ready purchase path (Shopee) and the items are low-priced, so a purchase needs little deliberation.
-- The channel can sell many small products, not one, so one weak video does not sink the business.
+- Cost to start is tiny (5,000+ THB a month), so a failed test is cheap.
+- Track A earns from the first view that converts. It needs no audience threshold, unlike Track B.
+- Cheap everyday essentials have a clear, simple promise: a small problem solved for little money. The buyer's effort is low (one tap to the cart) and time to result is short.
+- Review-summary videos that say so openly give an honest likelihood signal, which helps trust.
+- Two tracks spread risk: one earns early, one is a longer bet.
 
 ## What would kill it (the top 3, most dangerous first)
-1. Weak market on pain: gadgets are a want, not a painful problem. Tickets are 100-2,000 THB and the commission rate is unknown, so revenue per viewer may be too small to matter. Not enough evidence that the pain is massive or that the market is growing.
-2. Likelihood of the outcome is low: a faceless AI voice with stock or AI visuals gives viewers no proof that the product was ever used. Without trust, nobody clicks the link. This is the weakest term in the value equation.
-3. Commodity offer: Thai review and affiliate content is crowded, and "another gadget channel" competes on nothing but volume. YouTube may also refuse or cut monetisation for mass-produced AI content, and Shopee can change rates or rules at any time.
+1. Market and margin. Track A is a commodity: low price, low commission per sale, crowded Thai short-video affiliate content. Nothing in the brief says why a buyer picks this creator over the many others. The Offers lens does not see a differentiated offer yet. Commission rate and item prices are unknown (sources conflict, none official). If the rate is at the low end, the money may not justify the work.
+2. Likelihood (no proof). The founder cannot touch the products and the channel is faceless and AI-voiced. Buyers get no proof beyond summarised reviews. Hygiene and health claims add compliance risk, and a weak value equation on likelihood is the usual way these offers fail.
+3. Track B depends on YouTube policy. Ad revenue only comes after the Partner Program thresholds, and the "inauthentic content" rule can demonetise a repetitive AI channel as a whole. It is also a separate audience and skill (comedy) from Track A, so it splits the effort of one person. Track B has no offer at all, only ads.
 
 ## The questions I would ask the founder
-- Who exactly is the viewer, what problem do they have today, and what do they search for? (/founder-consumer)
-- Why would they believe a faceless AI channel over a creator who shows the product in use? What proof does each video carry?
-- Which channels already serve this viewer, what do they charge in trust, and what do their viewers complain about? (/founder-competitors)
-- What is the Shopee commission rate for these categories, what share of clicks buys, and what is the revenue per 1,000 views? (/founder-cfo)
-- How many hours per video, what is the break-even in monthly views, and when does the 5,000 THB budget run out? (/founder-cfo)
-- What makes this channel the obvious choice, beyond being faster to produce: a specific sub-niche, real hands-on testing, or a guarantee-like promise such as "only items I checked"? (/founder-offer)
+- What is the real Shopee Affiliate commission on these item categories, and what is the typical item price? (/founder-cfo, after the founder checks the account in Thailand)
+- Who else makes this exact content for Thai buyers, and what do they get wrong? (/founder-competitors)
+- Which buyers would click and buy, and what makes them doubt a faceless review summary? (/founder-consumer)
+- What is the sale per view needed to reach 5,000 THB a month in commission? (/founder-cfo)
+- What do TikTok, Facebook and Instagram allow for cart or link use, and is the disclosure wording settled?
+- What would make a clip better than a plain review summary: a comparison, a "which one to buy" pick, a bundle, a checklist?
+- Why run comedy as well, and what do you drop if time runs short?
 
 ## If FUND IF: the conditions
-- Validate the buyer first: run the consumer panel and confirm a named segment with a real pain and a real buy intent (/founder-consumer).
-- Name the gap against existing Thai channels and show the channel can own it (/founder-competitors).
-- The CFO must show positive unit economics at a realistic view and click-through assumption, using the actual commission rate (/founder-cfo).
-- Add proof the viewer can see: real product footage or photos, genuine testing, honest cons, with affiliate and AI disclosures. Build a stack the viewer cannot get from a generic channel (/founder-offer).
-- Run a cheap real test first (about 10 videos, real clicks and orders) before any bigger spend.
+1. Get the actual Shopee Affiliate rate and item prices, and have /founder-cfo show break-even clicks and sales for the 5,000 THB budget. If the numbers do not clear, stop.
+2. Finish /founder-competitors and name one angle that is not "cheaper": for example a buying guide or comparison that saves the buyer effort, with the review source shown.
+3. Run a small real test on Track A only (a set number of clips, a set period) with a pre-agreed result that continues or stops it. Track B waits until Track A earns.
+4. Keep claims on hygiene and health items plain and sourced, with affiliate disclosure on every clip.

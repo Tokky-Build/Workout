@@ -1,31 +1,30 @@
 # Monopoly lens
-Score: 3/10 | Vote: FUND IF
+Score: 3 | Vote: FUND IF
 
 ## What is strong
-- Near-zero capital at risk: 5,000+ THB a month is small, and affiliate links work before YouTube monetisation, so a first test costs little.
-- A channel is a distribution asset that can compound if videos keep ranking in search. Distribution is the open question, but the channel is at least a real route to buyers.
-- Thai language is a narrower market than English gadget content. That is a real, if thin, starting wedge.
-- Shopee is the place Thai buyers already shop, so the path from video to purchase is short.
+- Cost of being wrong is small: 5,000+ THB a month, one person, no stock, no shop. Failure is cheap.
+- Track A sells before any threshold: affiliate links work from day one on platforms that allow them, so revenue can start before an audience is large.
+- Faceless and AI-assisted production is cheap to scale across three short-video platforms at once.
+- Track B is a different bet (ads, not commission), so one policy or algorithm change does not hit both tracks the same way.
 
 ## What would kill it (the top 3, most dangerous first)
-1. **No durable advantage.** AI voice, stock visuals and AI scripts are available to everyone, so a copycat can match the channel in weeks. Nothing is ten times better, there is no network effect, no scale economy and no brand yet. Thai affiliate and review content is crowded, so the likely outcome is thin margin and a race to the bottom.
-2. **The market is not small or owned.** "Gadgets, desk setup and small office/IT accessories for Thai viewers aged 20-35" is broad and contested. The brief names no sub-niche the channel could dominate first, and the niche is assumed, not validated.
-3. **Platform dependence on both sides.** Shopee can change commission rates and rules at any time, and YouTube may refuse or reduce monetisation for repetitive, mass-produced AI content. The business owns neither the audience, the traffic source nor the revenue source.
+1. No moat and a crowded field. Track A is cheap essentials, thin commission per sale, in a space the brief calls crowded, especially on TikTok. Review summaries, AI voice and stock visuals are what anyone can copy in month six. No proprietary know-how, network effect, scale advantage or brand is in place. Competition destroys profit here.
+2. Distribution rented from platforms and from Shopee. Reach depends on TikTok, Facebook, Instagram and YouTube algorithms, and pay depends on Shopee's rates, which are unknown, conflict across sources, and can change at any time. No owned audience (list, group, channel the founder controls) is planned. One rule change cuts income to zero.
+3. Track B is the weakest track and may be a liability. Comedy Shorts earn ads only after Partner Program thresholds, with no secret or reason a viewer picks this channel over others. The brief notes YouTube's "inauthentic content" policy, which can demonetise a whole channel for repetitive AI content. Faceless, mass-produced comedy is exactly that profile. The same risk could taint the founder's other content if accounts are linked.
 
 ## The questions I would ask the founder
-- Who else covers the same buyer today, and what do they do well and badly? Not in the brief; run /founder-competitors.
-- What is the one small slice (a specific buyer, product type or use case) where this channel could be the obvious answer? Test it with /founder-consumer.
-- What is the secret: what do you know about this buyer or these products that others do not? The brief states none.
-- What stops a copycat in month six? Which of brand, trust, a recognisable format or proprietary data could this build?
-- How do the first 100 viewers, and the first 100 buying viewers, arrive, and what does each cost? The brief gives no figures; /founder-consumer and /founder-cfo.
-- What is the Shopee commission rate per category, and what is the revenue per 1,000 views at a realistic click and purchase rate? Unknown; /founder-cfo.
-- What original value does each video add (testing, comparison, local pricing, hands-on proof) so it is not read as mass-produced AI content?
-- Why now: what has changed that makes this window better than last year? Not stated.
-- If Shopee halved the commission or YouTube limited monetisation, would the business still work? /founder-cfo.
+- What small market can this own first (one product type, one buyer group, one Thai sub-niche), instead of "cheap essentials" in general? Which of the four durable edges could it build?
+- What do you know that other Thai affiliate clips do not? What is the secret?
+- What stops a copycat in month six? Why would a buyer follow this account over the next one?
+- How do the first 100 buyers arrive, and what does each cost in time and money? How many views per sale? (Open: /founder-consumer.)
+- What is the real Shopee commission rate and per-item price, and what does that mean per sale? (Open: /founder-cfo once the rate is confirmed in Thailand.)
+- Who else already sells the same items to the same buyer, and what gap is left? (Open: /founder-competitors, marked incomplete.)
+- What will you own that is not rented from a platform?
+- Why run Track B at all, and what makes it more than generic AI comedy?
 
 ## If FUND IF: the conditions
-1. Pick one narrow, named sub-niche and show evidence it is under-served in Thai (the competitor map from /founder-competitors shows an open gap).
-2. Name the advantage the channel will build, and the one thing a copycat cannot copy quickly (a distinctive format, real hands-on testing, a trusted voice, a data set).
-3. Show that each video carries original value beyond AI assembly, so the monetisation risk is managed.
-4. Real-world proof before scaling: a small batch of videos with measured views, link clicks and Shopee orders, with the numbers fed to /founder-cfo.
-5. A CFO model that still works at a lower commission rate and with no YouTube ad income.
+1. Narrow Track A to one small, specific niche before spending anything, and show in the competitor map (/founder-competitors) that the niche has a gap.
+2. Confirm the real Shopee commission rate, item prices and platform link rules in Thailand, then run the unit economics (/founder-cfo). If commission per sale cannot pay for the time, stop.
+3. Build one owned channel (for example a community group or list) from the first week so the audience is not only rented.
+4. Run a time-boxed test (a fixed number of weeks and clips) with a stated kill number, such as sales per 1,000 views, checked against the buyer panel (/founder-consumer).
+5. Treat Track B as optional and secondary: start it only after Track A shows a sale, and only with a clear human point of view that avoids the repetitive AI pattern the policy targets. Otherwise drop it.
