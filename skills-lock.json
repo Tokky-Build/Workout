@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "watch": {
+      "source": "bradautomates/claude-video",
+      "commit": "03ceb42f7fa2c4439aca01752118044baabffb8f",
+      "sourceType": "github",
+      "skillPath": "skills/watch/SKILL.md",
+      "computedHash": "26c7f5055f38651b6da2649506ad34f3d98ade4b540e417acb74efbf3258bf72"
+    }
+  }
+}
