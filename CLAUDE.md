@@ -34,6 +34,12 @@ python3 .claude/skills/watch/scripts/setup.py --json
 - "/watch <ลิงก์> <คำถาม>"
 - "ดูคลิปนี้แล้วบอกว่าเกิดอะไรช่วงนาที 5-8 <ลิงก์>"
 
+## ติดตั้ง `/watch` ให้ใช้ได้ทุกโปรเจกต์ / ทุกเครื่อง
+ดูคู่มือเต็ม: [`docs/watch-setup.md`](docs/watch-setup.md) — ทางลัด (macOS/Linux):
+```bash
+bash scripts/install-watch.sh
+```
+
 ## ข้อจำกัดสำคัญ
 
 - สกิล YouTube ทั้งสองตัว **ใช้ได้เฉพาะ Claude Code บนเครื่องเดสก์ท็อป** (เน็ตบ้าน/ออฟฟิศ)
